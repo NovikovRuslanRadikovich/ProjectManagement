@@ -22,7 +22,7 @@ public class OrderController extends ResponseCreator {
     @ApiImplicitParam(name = "Authorization", paramType = "header", required = true, dataType = "string")
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     public ResponseEntity<ApiResponse<String>> createOrder(@RequestBody OrderDto orderDto) {
-        orderService.createNewOrder(orderedItemDtoList);
+        orderService.createNewOrder(orderDto);
         return createGoodResponse();
     }
 
