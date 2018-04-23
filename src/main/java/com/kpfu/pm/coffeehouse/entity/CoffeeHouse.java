@@ -25,4 +25,8 @@ public class CoffeeHouse extends AbstractEntity {
      @OneToMany(fetch = FetchType.LAZY,mappedBy = "orderscoffeehouse")
      Set<Order> orders;
 
+     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "productscoffeeHouses")
+     private Set<Product> products;
+
+
 }

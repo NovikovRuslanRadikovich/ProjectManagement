@@ -1,21 +1,28 @@
 package com.kpfu.pm.coffeehouse.entity;
 
 
-import org.hibernate.annotations.Polymorphism;
-import org.hibernate.annotations.PolymorphismType;
+import lombok.*;
 
 import javax.persistence.*;
 
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
-@Polymorphism(type = PolymorphismType.EXPLICIT)
 @Table(name="barman")
-public class Barman extends User {
+public class Barman extends AbstractEntity {
 
     @ManyToOne
     @JoinColumn(name="coffeehouse")
     CoffeeHouse coffeeHouse;
 
+    @Column(name = "name", nullable = false)
+    private String name;
 
-
-
+    @Column(name = "surname", nullable = false)
+    private String surname;
 }

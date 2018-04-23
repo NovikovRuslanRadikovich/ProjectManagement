@@ -7,4 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CoffeeHouseRepository extends JpaRepository<CoffeeHouse,Long> {
+
+
+    CoffeeHouse findOneById(long id);
+
 }
