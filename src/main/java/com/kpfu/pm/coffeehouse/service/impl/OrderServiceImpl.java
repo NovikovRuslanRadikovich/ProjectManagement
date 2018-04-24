@@ -2,10 +2,8 @@ package com.kpfu.pm.coffeehouse.service.impl;
 
 import com.kpfu.pm.coffeehouse.dto.OrderDto;
 import com.kpfu.pm.coffeehouse.dto.response.OrderResponseDto;
-import com.kpfu.pm.coffeehouse.dto.response.ProductResponseDto;
 import com.kpfu.pm.coffeehouse.entity.CoffeeHouse;
 import com.kpfu.pm.coffeehouse.entity.Order;
-import com.kpfu.pm.coffeehouse.entity.Product;
 import com.kpfu.pm.coffeehouse.repository.OrderRepository;
 import com.kpfu.pm.coffeehouse.service.CoffeeHouseService;
 import com.kpfu.pm.coffeehouse.service.OrderService;

@@ -40,5 +40,17 @@ public class ProductController extends ResponseCreator {
         return createGoodResponse(productService.getAllByCoffeeHouse(coffeehouseId));
     }
 
+//    @ApiImplicitParam(name = "Authorization", paramType = "header", required = true, dataType = "string")
+//    @RequestMapping(value = "/product/{productId}/coffeehouse/{coffeehouseId}", method = RequestMethod.POST)
+//    public ResponseEntity<ApiResponse<String>> deleteProductFromCoffeeHouse(@PathVariable long productId,
+//                                                                            @PathVariable long coffeehouseId) {
+//        try{
+//            productService.deleteProduct(productDto,coffeehouseId);
+//        } catch (Exception e) {
+//            return createBadResponse(e.getMessage());
+//        }
+//        return createGoodResponse();
+//    }
+
 
 }

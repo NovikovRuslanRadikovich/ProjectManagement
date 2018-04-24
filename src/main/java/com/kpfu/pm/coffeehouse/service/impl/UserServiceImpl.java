@@ -1,6 +1,5 @@
 package com.kpfu.pm.coffeehouse.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kpfu.pm.coffeehouse.dto.UserDto;
 import com.kpfu.pm.coffeehouse.entity.User;
 import com.kpfu.pm.coffeehouse.repository.UserRepository;

@@ -31,10 +31,17 @@ public class BarmanController extends ResponseCreator {
         return createGoodResponse();
     }
 
+    @ApiImplicitParam(name = "Authorization", paramType = "header", required = true, dataType = "string")
+    @RequestMapping(value = "/barman/{id}", method = RequestMethod.POST)
+    public ResponseEntity<ApiResponse<String>> deleteBarman(@PathVariable long id) {
+        barmanService.deleteBarman(id);
+        return createGoodResponse();
+    }
+
 
     @ApiImplicitParam(name = "Authorization", paramType = "header", required = true, dataType = "string")
     @RequestMapping(value = "/barman/{coffeehouseId}", method = RequestMethod.GET)
-    public ResponseEntity<ApiResponse<List<BarmanResponseDto>>> getOrders(@PathVariable long coffeehouseId) {
+    public ResponseEntity<ApiResponse<List<BarmanResponseDto>>> getBarmans(@PathVariable long coffeehouseId) {
 
         return createGoodResponse(barmanService.getAllByCoffeeHouse(coffeehouseId));
     }

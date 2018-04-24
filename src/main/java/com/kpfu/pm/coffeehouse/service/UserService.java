@@ -7,5 +7,5 @@ public interface UserService {
 
     User findOneByUsername(String currentUserUsername);
 
-    void createUser(UserDto appUserDto) throws Exception;
+    void createUser(UserDto userDto) throws Exception;
 }

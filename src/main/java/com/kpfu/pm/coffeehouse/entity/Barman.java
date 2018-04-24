@@ -4,6 +4,7 @@ package com.kpfu.pm.coffeehouse.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Getter
@@ -19,6 +20,9 @@ public class Barman extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name="coffeehouse")
     CoffeeHouse coffeeHouse;
+
+    @OneToMany(mappedBy = "commentsbarman")
+    Set<BarmanComment> barmanComments;
 
     @Column(name = "name", nullable = false)
     private String name;

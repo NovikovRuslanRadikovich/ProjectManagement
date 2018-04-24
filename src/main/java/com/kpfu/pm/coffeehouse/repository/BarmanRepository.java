@@ -10,4 +10,9 @@ public interface BarmanRepository extends JpaRepository<Barman,Long> {
 
     List<Barman> getAllByCoffeeHouse(CoffeeHouse coffeeHouse);
 
+    Barman findOneById(long barmanId);
+
+    Barman save(Barman barman);
+
+    void deleteById(long id);
 }

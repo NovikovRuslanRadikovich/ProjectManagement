@@ -13,7 +13,7 @@ import java.util.Set;
 @EqualsAndHashCode
 @Entity
 @Table(name = "coffeehouses")
-public class CoffeeHouse extends AbstractEntity {
+public class CoffeeHouse extends AbstractEntity  {
 
      @OneToMany(fetch = FetchType.LAZY, mappedBy = "coffeeHouse")
      Set<Manager> managers;
@@ -28,5 +28,7 @@ public class CoffeeHouse extends AbstractEntity {
      @ManyToMany(fetch = FetchType.LAZY, mappedBy = "productscoffeeHouses")
      private Set<Product> products;
 
+     @OneToMany(fetch = FetchType.LAZY, mappedBy = "commentscoffeeHouse")
+     private Set<CoffeeHouseComment> coffeeHouseComments;
 
 }
