@@ -17,9 +17,8 @@ import javax.persistence.Table;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Polymorphism(type = PolymorphismType.EXPLICIT)
 @Table(name="manager")
-public class Manager extends User{
+public class Manager extends AbstractEntity{
 
     @ManyToOne
     @JoinColumn(name="coffehouse")
