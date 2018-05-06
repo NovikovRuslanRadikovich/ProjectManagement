@@ -1,5 +1,6 @@
 package com.kpfu.pm.coffeehouse.service.impl;
 
+import com.kpfu.pm.coffeehouse.converter.OrderConverter;
 import com.kpfu.pm.coffeehouse.dto.OrderDto;
 import com.kpfu.pm.coffeehouse.dto.response.OrderResponseDto;
 import com.kpfu.pm.coffeehouse.entity.CoffeeHouse;
@@ -27,6 +28,9 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     CoffeeHouseService coffeeHouseService;
 
+    @Autowired
+    OrderConverter orderConverter;
+    
     @Override
     public void createOrder(OrderDto orderDto) {
         Order order = new Order();
@@ -38,17 +42,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<OrderResponseDto> getAllByCoffeeHouse(long coffeeHouseId) {
         CoffeeHouse coffeeHouse = coffeeHouseService.findOneById(coffeeHouseId);
-        return coffeeHouse.getOrders().stream().map(this::toOrderResponseDto).
+        return coffeeHouse.getOrders().stream().map(orderConverter::doForward).
                 collect(Collectors.toList());
     }
-
-    OrderResponseDto toOrderResponseDto(Order order) {
-        OrderResponseDto orderResponseDto = new OrderResponseDto();
-        orderResponseDto.setOwner_id(order.getId());
-        orderResponseDto.setOrders_coffeehouse_id(order.getOrderscoffeehouse().getId());
-        return orderResponseDto;
-    }
-
-
-
+    
 }
