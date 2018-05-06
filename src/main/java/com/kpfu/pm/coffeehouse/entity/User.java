@@ -13,7 +13,6 @@ import java.util.Set;
 @ToString
 @EqualsAndHashCode
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name="users")
 public class User extends AbstractEntity {
 
@@ -23,6 +22,8 @@ public class User extends AbstractEntity {
      @Column(name = "password",nullable = false)
      private String password;
 
+     @Column(name = "phonenumber", nullable = false)
+     private String phoneNumber;
 
      @OneToMany(fetch = FetchType.LAZY,mappedBy = "ordersowner")
      Set<Order> orders;

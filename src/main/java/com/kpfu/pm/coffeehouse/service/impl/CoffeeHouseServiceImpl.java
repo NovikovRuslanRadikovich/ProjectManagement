@@ -20,4 +20,11 @@ public class CoffeeHouseServiceImpl implements CoffeeHouseService {
     public List<CoffeeHouse> getAll() {
         return coffeeHouseRepository.findAll();
     }
+
+    @Override
+    public CoffeeHouse findOneById(long id) {
+        return coffeeHouseRepository.findOneById(id);
+    }
+
+
 }

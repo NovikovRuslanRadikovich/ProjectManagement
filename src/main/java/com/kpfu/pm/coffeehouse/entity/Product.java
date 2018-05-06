@@ -1,6 +1,5 @@
 package com.kpfu.pm.coffeehouse.entity;
 
-
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,5 +21,24 @@ public class Product extends AbstractEntity{
             inverseJoinColumns = {@JoinColumn(name = "order_id",
             nullable = true,updatable = false)})
     private Set<Order> orders;
+
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name="product_coffeehouse", joinColumns = {
+            @JoinColumn(name = "product_id",nullable = true, updatable = false) },
+            inverseJoinColumns = {@JoinColumn(name = "coffeehouse_id",
+                    nullable = true,updatable = false)})
+    private Set<CoffeeHouse> productscoffeeHouses;
+
+    @Column(name = "name",nullable = false)
+    private String name;
+
+    @Column(name = "price", nullable = false)
+    private String price;
+
+    @Column(name = "description", nullable = false)
+    private String description;
+
+
 
 }

@@ -9,4 +9,7 @@ public interface CoffeeHouseService {
 
 
     List<CoffeeHouse> getAll();
+
+
+    CoffeeHouse findOneById(long id);
 }
